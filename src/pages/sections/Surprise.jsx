@@ -6,7 +6,7 @@ import { db } from "../../firebase";
 import { ref, onValue, remove } from "firebase/database";
 
 export default function Surprise() {
-
+console.log("🎁 Surprise component mounted!"); // ADD THIS LINE
   const [opened, setOpened] = useState(false);
 
   const [wishes, setWishes] = useState([]);
@@ -15,32 +15,34 @@ export default function Surprise() {
 
   // 🔥 FETCH REALTIME WISHES
   useEffect(() => {
+  const wishesRef = ref(db, "wishes");
 
-    if (!opened) return;
+  console.log("Attempting to read from:", wishesRef.toString()); // 👈 shows exact URL
 
-    const wishesRef = ref(db, "wishes");
-
-    onValue(wishesRef, (snapshot) => {
+  const unsubscribe = onValue(
+    wishesRef,
+    (snapshot) => {
+      console.log("Snapshot exists:", snapshot.exists()); // 👈 true or false
+      console.log("Snapshot val:", snapshot.val());       // 👈 actual data or null
 
       const data = snapshot.val();
-
       if (data) {
-
-        const loadedWishes = Object.entries(data).map(
-          ([id, value]) => ({
-            id,
-            ...value,
-          })
-        );
-
+        const loadedWishes = Object.entries(data).map(([id, value]) => ({
+          id,
+          ...value,
+        }));
         setWishes(loadedWishes.reverse());
-
       } else {
         setWishes([]);
       }
-    });
+    },
+    (error) => {
+      console.error("Read error:", error);
+    }
+  );
 
-  }, [opened]);
+  return () => unsubscribe();
+}, []);
 
   // 🔄 ROTATE EVERY 10 SEC
   useEffect(() => {

@@ -5,7 +5,6 @@ import Letter from "./sections/Letter";
 import Timeline from "./sections/Timeline";
 import Gallery from "./sections/gallery";
 import Wishes from "./sections/Wishes";
-import Surprise from "./sections/Surprise";
 import BackButton from "../components/common/BackButton";
 
 export default function Home() {
@@ -27,8 +26,6 @@ export default function Home() {
       {step === 2 && <Timeline onNext={nextStep} />}
       {step === 3 && <Gallery onNext={nextStep} />}
       {step === 4 && <Wishes onNext={nextStep} />}
-      
-      {step === 5 && <Surprise />}
     </>
   );
 }
