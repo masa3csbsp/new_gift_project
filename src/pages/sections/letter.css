@@ -1,0 +1,88 @@
+/* 🎬 CONTAINER */
+.letter-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: url("/images/bg_letter.jpeg") center/cover no-repeat;
+}
+
+/* 🎥 VIDEO BACKGROUND */
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+/* 🌑 DARK OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+  font-weight:600;
+}
+
+/* 💌 CONTENT ABOVE VIDEO */
+.letter-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-weight:1000;
+}
+
+/* 💌 Envelope */
+.envelope {
+  font-size: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.envelope p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* 📜 Letter Paper */
+.letter-paper {
+  width: 400px;
+  max-width: 90%;
+  padding: 30px;
+  background: #fcfcfc00;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 182, 193, 0.4);
+  font-family: "Courier New", monospace;
+}
+
+/* ✍️ Text */
+.letter-paper pre {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* 🎁 Button */
+.next-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: pink;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.next-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px pink;
+}

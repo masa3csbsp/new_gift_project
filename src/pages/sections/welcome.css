@@ -1,0 +1,80 @@
+/* 🌌 MAIN CONTAINER */
+.welcome-container {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+
+  /* 💖 Background Image */
+  background: url("/images/bg2.jpeg") center/cover no-repeat;
+
+  /* 🎬 Cinematic zoom */
+  animation: zoomBg 20s infinite alternate ease-in-out;
+}
+
+/* 🌑 DARK OVERLAY */
+.welcome-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+/* 💎 TEXT AREA ABOVE OVERLAY */
+.text-area {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 20px;
+}
+
+/* ✨ TEXT LINES */
+.text-area p {
+  font-size: 18px;
+  margin: 10px 0;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+}
+
+/* 💖 NAMES */
+.text-area h2 {
+  margin-top: 20px;
+  font-size: 24px;
+  color: pink;
+  text-shadow: 0 0 10px rgba(255, 182, 193, 0.7);
+}
+
+/* 🎁 BUTTON */
+.start-btn {
+  margin-top: 25px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+
+  transition: all 0.3s ease;
+}
+
+/* ✨ BUTTON HOVER */
+.start-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.8);
+}
+
+/* 🎬 BACKGROUND ZOOM ANIMATION */
+@keyframes zoomBg {
+  0% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 110%;
+  }
+}

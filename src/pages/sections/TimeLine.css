@@ -1,0 +1,101 @@
+.timeline-container {
+  padding: 50px 20px;
+  background: radial-gradient(circle, #1a1a2e, #0f0f1a);
+  color: white;
+  text-align: center;
+}
+
+.timeline-title {
+  margin-bottom: 40px;
+  font-size: 24px;
+}
+
+/* 📍 Timeline line */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background: pink;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 📦 Items */
+.timeline-item {
+  padding: 20px;
+  position: relative;
+  width: 50%;
+}
+
+.timeline-item.left {
+  left: 0;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+/* 💎 Content */
+.content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.content img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* 🎁 Button */
+.next-btn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: pink;
+  cursor: pointer;
+}
+/* 💖 ICON WRAPPER */
+.timeline-icon {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid pink;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+}
+
+/* 🖼️ ICON IMAGE */
+.timeline-icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* ⚠️ IMPORTANT */
+.content {
+  position: relative;
+}

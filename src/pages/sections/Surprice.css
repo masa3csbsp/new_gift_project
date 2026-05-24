@@ -1,0 +1,143 @@
+.surprise-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #1a1a2e, #0f0f1a);
+  color: white;
+  text-align: center;
+
+  background: url("/images/bgf.jpeg") center/cover no-repeat;
+}
+/* 🎁 Gift Box */
+.gift-box {
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.gift-box p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* 💖 Final Message */
+.final-message {
+  max-width: 500px;
+}
+
+.final-message h2 {
+  color: pink;
+  margin-bottom: 20px;
+}
+
+.final-message img {
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* 🎉 Confetti */
+.confetti {
+  margin-top: 20px;
+  font-size: 24px;
+  animation: float 3s infinite alternate;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+.wishes-display {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.wish-card {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.wish-card h4 {
+  margin-bottom: 5px;
+  color: pink;
+}
+/* 💖 CARD (UPGRADED) */
+.wish-card {
+  position: relative;
+  padding: 18px;
+  border-radius: 16px;
+  text-align: left;
+
+  /* 💎 Glass look */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+
+  /* ✨ Glow border */
+  border: 1px solid rgba(255, 192, 203, 0.3);
+
+  /* 🌟 Soft shadow */
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.2);
+
+  /* 🎬 Smooth transition */
+  transition: all 0.3s ease;
+
+  /* 💫 Floating animation */
+  animation: floatCard 4s ease-in-out infinite;
+}
+
+/* 💫 Floating effect */
+@keyframes floatCard {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 🌟 Hover effect */
+.wish-card:hover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: 0 0 30px rgba(255, 182, 193, 0.5);
+}
+
+/* 💖 NAME */
+.wish-card h4 {
+  margin-bottom: 6px;
+  color: #ffb6c1;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* 💌 MESSAGE TEXT */
+.wish-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* 🗑️ DELETE BUTTON */
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 16px;
+
+  background: rgba(255,255,255,0.1);
+  padding: 4px 6px;
+  border-radius: 8px;
+
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  opacity: 1;
+  transform: scale(1.2);
+  background: rgba(255, 0, 0, 0.2);
+}
